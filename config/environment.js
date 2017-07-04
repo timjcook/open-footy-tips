@@ -14,12 +14,14 @@ module.exports = function(environment) {
       EXTEND_PROTOTYPES: {
         // Prevent Ember Data from overriding Date.parse.
         Date: false
+      },
+      api: {
+        host: '',
+        namespace: 'api/v1'
       }
     },
 
     APP: {
-      // Here you can pass flags/options to your application instance
-      // when it is created
     }
   };
 
