@@ -8,8 +8,12 @@ moduleForComponent('nav-bar', 'Integration | Component | nav bar', {
 test('it renders with logo, heading and current season', function(assert) {
   assert.expect(3);
 
-  this.render(hbs`{{nav-bar}}`);
+  this.set('season', {
+    year: 2017
+  });
+
+  this.render(hbs`{{nav-bar season=season}}`);
   assert.ok(!!this.$('#nav-bar .left .logo img').length, 'should have logo image is present');
   assert.equal(this.$('#nav-bar .left .heading').text().trim(), 'OpenFooty - Tagline', 'should have the open footy headline');
-  assert.equal(this.$('#nav-bar .right .item.season').text().trim(), 'Season 2017', 'should have current season');
+  assert.equal(this.$('#nav-bar .right .item.season').text().trim(), `Season ${this.get('season.year')}`, 'should have current season');
 });
