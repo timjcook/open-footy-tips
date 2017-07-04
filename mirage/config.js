@@ -22,14 +22,6 @@ export default function() {
     }
   });
 
-  /*
-    Shorthand cheatsheet:
-
-    this.post('/posts');
-    this.get('/posts/:id');
-    this.put('/posts/:id'); // or this.patch
-    this.del('/posts/:id');
-
-    http://www.ember-cli-mirage.com/docs/v0.3.x/shorthands/
-  */
+  this.get('/seasons/:id/rounds');
+  this.get('/rounds/:id');
 }

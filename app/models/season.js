@@ -1,9 +1,15 @@
 import DS from 'ember-data';
 
-const { Model, attr } = DS;
+const { Model, attr, hasMany } = DS;
 
 export default Model.extend({
 
-  year: attr('number')
+  // Attributes
+
+  year: attr('number'),
+
+  // Relationships
+
+  rounds: hasMany('rounds')
 
 });
