@@ -13,10 +13,10 @@ export default function() {
   // this.timing = 400;      // delay for each request, automatically set to 0 during testing
 
   this.get('/seasons', (schema, request) => {
-    let year = request.queryParams.year;
+    let { year } = request.queryParams;
 
     if (year) {
-      return schema.seasons.findBy({ 'year': year });
+      return schema.seasons.findBy({ year });
     } else {
       return schema.seasons.slice(0, 19);
     }
