@@ -1,9 +1,105 @@
+import moment from 'moment';
+
 export default function(server) {
+
+  let adelaideOval = server.create('ground', { name: 'Adelaide Oval', state: 'South Australia' });
+  server.create('ground', { name: 'University of Tasmania Stadium', state: 'Tasmania' });
+  server.create('ground', { name: 'Blundstone Arena', state: 'Tasmania' });
+  server.create('ground', { name: 'Cazalys Stadium', state: 'Queensland' });
+  let domain = server.create('ground', { name: 'Domain Stadium', state: 'Western Australia' });
+  let etihad = server.create('ground', { name: 'Etihad Stadium', state: 'Victoria' });
+  let gabba = server.create('ground', { name: 'The Gabba', state: 'Queensland' });
+  server.create('ground', { name: 'Jiangwan Stadium', state: 'China' });
+  server.create('ground', { name: 'UNSW Canberra Oval', state: 'Canberra' });
+  server.create('ground', { name: 'Mars Stadium', state: 'Victoria' });
+  let mcg = server.create('ground', { name: 'MCG', state: 'Victoria' });
+  let metricon = server.create('ground', { name: 'Metricon Stadium', state: 'Queensland' });
+  let scg = server.create('ground', { name: 'SCG', state: 'New South Wales' });
+  let simonds = server.create('ground', { name: 'Simonds Stadium', state: 'Victoria' });
+  let spotless = server.create('ground', { name: 'Spotless Stadium', state: 'New South Wales' });
+  server.create('ground', { name: 'TIO Stadium', state: 'Northern Territory' });
+  server.create('ground', { name: 'TIO Traeger Park', state: 'Northern Territory' });
+
+  let adelaide = server.create('team', { name: 'Adelaide', nickname: 'Crows', homeGround: adelaideOval });
+  let brisbane = server.create('team', { name: 'Brisbane', nickname: 'Lions', homeGround: gabba });
+  let carlton = server.create('team', { name: 'Carlton', nickname: 'Blues', homeGround: mcg });
+  let collingwood = server.create('team', { name: 'Collingwood', nickname: 'Magpies', homeGround: mcg });
+  let essendon = server.create('team', { name: 'Essendon', nickname: 'Bombers', homeGround: etihad });
+  let fremantle = server.create('team', { name: 'Fremantle', nickname: 'Dockers', homeGround: domain });
+  let geelong = server.create('team', { name: 'Geelong', nickname: 'Cats', homeGround: simonds });
+  let goldCoast = server.create('team', { name: 'Gold Coast', nickname: 'Suns', homeGround: metricon });
+  let gws = server.create('team', { name: 'Greater Western Sydney', nickname: 'Giants', homeGround: spotless });
+  let hawthorn = server.create('team', { name: 'Hawthorn', nickname: 'Hawks', homeGround: mcg });
+  let melbourne = server.create('team', { name: 'Melbourne', nickname: 'Demons', homeGround: mcg });
+  let north = server.create('team', { name: 'North Melbourne', nickname: 'Kangaroos', homeGround: etihad });
+  let port = server.create('team', { name: 'Port Adelaide', nickname: 'Power', homeGround: adelaideOval });
+  let richmond = server.create('team', { name: 'Richmond', nickname: 'Tigers', homeGround: mcg });
+  let saints = server.create('team', { name: 'St Kilda', nickname: 'Saints', homeGround: etihad });
+  let sydney = server.create('team', { name: 'Sydney', nickname: 'Swans', homeGround: scg });
+  let westCoast = server.create('team', { name: 'West Coast', nickname: 'Eagles', homeGround: domain });
+  let bulldogs = server.create('team', { name: 'Western Bulldogs', nickname: 'Bulldogs', homeGround: etihad });
+
   let season = server.create('season', {
     year: 2017
   });
 
-  server.create('round', { season, roundNumber: 1 });
+  server.create('round', { season, roundNumber: 1, matches: [
+    server.create('match', {
+      startTime: moment('2017-3-23 19:20'),
+      homeTeam: carlton,
+      awayTeam: richmond,
+      ground: mcg
+    }),
+    server.create('match', {
+      startTime: moment('2017-3-24 19:50'),
+      homeTeam: collingwood,
+      awayTeam: bulldogs,
+      ground: mcg
+    }),
+    server.create('match', {
+      startTime: moment('2017-3-25 16:35'),
+      homeTeam: saints,
+      awayTeam: melbourne,
+      ground: etihad
+    }),
+    server.create('match', {
+      startTime: moment('2017-3-25 16:35'),
+      homeTeam: sydney,
+      awayTeam: port,
+      ground: scg
+    }),
+    server.create('match', {
+      startTime: moment('2017-3-25 19:25'),
+      homeTeam: essendon,
+      awayTeam: hawthorn,
+      ground: mcg
+    }),
+    server.create('match', {
+      startTime: moment('2017-3-25 19:05'),
+      homeTeam: goldCoast,
+      awayTeam: brisbane,
+      ground: metricon
+    }),
+    server.create('match', {
+      startTime: moment('2017-3-26 13:10'),
+      homeTeam: north,
+      awayTeam: westCoast,
+      ground: etihad
+    }),
+    server.create('match', {
+      startTime: moment('2017-3-26 14:50'),
+      homeTeam: adelaide,
+      awayTeam: gws,
+      ground: adelaideOval
+    }),
+    server.create('match', {
+      startTime: moment('2017-3-26 16:40'),
+      homeTeam: fremantle,
+      awayTeam: geelong,
+      ground: domain
+    })
+  ]});
+
   server.create('round', { season, roundNumber: 2 });
   server.create('round', { season, roundNumber: 3 });
   server.create('round', { season, roundNumber: 4 });
