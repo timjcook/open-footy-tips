@@ -1,0 +1,12 @@
+#dashboard {
+  display: flex;
+  .panel {
+    &.left {
+      max-width: 70%; 
+    }
+
+    &.right {
+      max-width: 30%; 
+    }
+  }
+}
