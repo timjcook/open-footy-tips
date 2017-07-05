@@ -4,7 +4,13 @@ $default-font-size: rem(16);
 $medium-font-size: rem(18);
 $large-font-size: rem(20);
 
+$bold-font-weight: 600;
+
 html, body {
   font-family: Helvetica Neue, Arial, sans-serif;
+  font-size: $default-font-size;
+}
+
+button {
   font-size: $default-font-size;
 }
