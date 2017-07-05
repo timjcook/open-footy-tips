@@ -1,6 +1,6 @@
 import DS from 'ember-data';
 
-const { Model, attr, belongsTo } = DS;
+const { Model, attr, belongsTo, hasMany } = DS;
 
 export default Model.extend({
 
@@ -10,6 +10,8 @@ export default Model.extend({
 
   // relationships
 
-  season: belongsTo('season')
+  season: belongsTo('season'),
+
+  matches: hasMany('matches')
 
 });

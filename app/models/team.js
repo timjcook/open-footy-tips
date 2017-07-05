@@ -1,11 +1,13 @@
 import DS from 'ember-data';
 
-const { Model, attr } = DS;
+const { Model, attr, belongsTo } = DS;
 
 export default Model.extend({
 
   name: attr('string'),
 
-  nickname: attr('string')
+  nickname: attr('string'),
+
+  homeGround: belongsTo('ground')
 
 });
