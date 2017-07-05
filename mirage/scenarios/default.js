@@ -48,57 +48,66 @@ export default function(server) {
       startTime: moment('2017-3-23 19:20'),
       homeTeam: carlton,
       awayTeam: richmond,
-      ground: mcg
+      ground: mcg,
+      isCompleted: false
     }),
     server.create('match', {
       startTime: moment('2017-3-24 19:50'),
       homeTeam: collingwood,
       awayTeam: bulldogs,
-      ground: mcg
+      ground: mcg,
+      isCompleted: false
     }),
     server.create('match', {
       startTime: moment('2017-3-25 16:35'),
       homeTeam: saints,
       awayTeam: melbourne,
-      ground: etihad
+      ground: etihad,
+      isCompleted: false
     }),
     server.create('match', {
       startTime: moment('2017-3-25 16:35'),
       homeTeam: sydney,
       awayTeam: port,
-      ground: scg
+      ground: scg,
+      isCompleted: false
     }),
     server.create('match', {
       startTime: moment('2017-3-25 19:25'),
       homeTeam: essendon,
       awayTeam: hawthorn,
-      ground: mcg
+      ground: mcg,
+      isCompleted: false
     }),
     server.create('match', {
       startTime: moment('2017-3-25 19:05'),
       homeTeam: goldCoast,
       awayTeam: brisbane,
-      ground: metricon
+      ground: metricon,
+      isCompleted: false
     }),
     server.create('match', {
       startTime: moment('2017-3-26 13:10'),
       homeTeam: north,
       awayTeam: westCoast,
-      ground: etihad
+      ground: etihad,
+      isCompleted: false
     }),
     server.create('match', {
       startTime: moment('2017-3-26 14:50'),
       homeTeam: adelaide,
       awayTeam: gws,
-      ground: adelaideOval
+      ground: adelaideOval,
+      isCompleted: false
     }),
     server.create('match', {
       startTime: moment('2017-3-26 16:40'),
       homeTeam: fremantle,
       awayTeam: geelong,
-      ground: domain
-    })
-  ]});
+      ground: domain,
+      isCompleted: false
+    })]
+  });
 
   server.create('round', { season, roundNumber: 2 });
   server.create('round', { season, roundNumber: 3 });

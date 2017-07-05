@@ -24,4 +24,7 @@ export default function() {
 
   this.get('/seasons/:id/rounds');
   this.get('/rounds/:id');
+  this.get('/matches/:id');
+  this.get('/grounds/:id');
+  this.get('/teams/:id');
 }
