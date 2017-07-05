@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: space-between;
 
-  margin: $grid-size 0;
+  margin: $grid-size 0 ($grid-size * 3);
 
   .round-picker-item {
     padding: $grid-size;
