@@ -4,7 +4,11 @@ const { Model, attr, belongsTo } = DS;
 
 export default Model.extend({
 
+  // attributes
+
   startTime: attr('date'),
+
+  isCompleted: attr('boolean'),
 
   homeTeam: belongsTo('team'),
 
