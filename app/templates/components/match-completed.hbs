@@ -1,0 +1,40 @@
+<div class='time-info'>
+  <div class='match-date'>
+    <p>{{moment-format match.startTime 'dddd, Do MMMM'}}</p>
+  </div>
+  <div class='match-time'>
+    <p>{{moment-format match.startTime 'HH:mm'}} AEST</p>
+  </div>
+</div>
+
+<div class='venue-info'>
+  <p>{{match.ground.name}}</p>
+</div>
+
+<div class='match-info'>
+  <div class='match-info-item home team-info {{if match.didHomeTeamWin "winning-team"}}'>
+    <p>{{match.homeTeam.name}}</p>
+
+    <div class='score'>
+      {{match.prettyHomeScore}}
+    </div>
+  </div>
+
+  <div class='match-info-item divider'>
+    {{#if match.didHomeTeamWin}}
+      <p>def.</p>
+    {{else if match.didAwayTeamWin}}
+      <p>def by.</p>
+    {{else}}
+      <p>drew with.</p>
+    {{/if}}
+  </div>
+
+  <div class='match-info-item away team-info {{if match.didAwayTeamWin "winning-team"}}'>
+    <p>{{match.awayTeam.name}}</p>
+
+    <div class='score'>
+      {{match.prettyAwayScore}}
+    </div>
+  </div>
+</div>

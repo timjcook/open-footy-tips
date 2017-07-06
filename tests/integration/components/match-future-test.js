@@ -39,7 +39,7 @@ test('it renders with time, venue and match info', function(assert) {
 
   assert.equal(this.$('.match-future .match-info .match-info-item.home p').text().trim(), team1.name);
   assert.ok(this.$('.match-future .match-info .match-info-item.home .previous-results').length);
-  assert.equal(this.$('.match-future .match-info .match-info-item.vs').text().trim(), 'vs.');
+  assert.equal(this.$('.match-future .match-info .match-info-item.divider').text().trim(), 'vs.');
   assert.equal(this.$('.match-future .match-info .match-info-item.away p').text().trim(), team2.name);
   assert.ok(this.$('.match-future .match-info .match-info-item.away .previous-results').length);
 });

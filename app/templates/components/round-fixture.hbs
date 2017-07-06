@@ -1,6 +1,7 @@
 <div id='round-fixture'>
   {{#each round.matches as |match|}}
     {{#if match.isCompleted}}
+      {{match-completed match=match}}
     {{else}}
       {{match-future match=match}}
     {{/if}}

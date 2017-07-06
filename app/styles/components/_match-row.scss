@@ -9,6 +9,73 @@
   padding: ($grid-size) ($grid-size * 2);
   margin: rem(0) $grid-size $grid-size $grid-size;
 
+  .match-info {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 $match-margin;
+    .match-info-item {
+      p {
+        margin-bottom: $grid-size * 2;
+      }
+      &.divider {
+        text-align: center;
+        min-width: $match-margin;
+      }
+      &.team-info {
+        width: $grid-size * 20;
+      }
+      &.divider {
+        font-weight: $bold-font-weight;
+      }
+    }
+  }
+
+  &.match-future {
+    .match-info {
+      .match-info-item {
+        & {
+          font-weight: $bold-font-weight;
+        }
+      }
+      .previous-results {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .previous-results-item {
+          border-radius: rem(8);
+          color: $white;
+          text-align: center;
+          font-size: $small-font-size;
+
+          padding: rem(2) rem(5) rem(3);
+          min-width: rem(14);
+          margin: $grid-size $grid-size $grid-size rem(0);
+
+          &.win {
+            background-color: $green;
+          }
+          &.loss {
+            background-color: $red;
+          }
+        }
+      }
+    }
+  }
+
+  &.match-completed {
+    .match-info {
+      .match-info-item {
+        &.winning-team {
+          font-weight: $bold-font-weight;
+        }
+        .score {
+          color: $blue;
+        }
+      }
+    }
+  }
+
   .time-info, .venue-info {
     position: absolute;
     top: $grid-size;
@@ -27,52 +94,6 @@
   .venue-info {
     right: $grid-size * 2;
     text-align: right;
-  }
-
-  .match-info {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 $match-margin;
-
-    .match-info-item {
-      p {
-        margin-bottom: $grid-size * 2;
-      }
-      &, &.vs {
-        font-weight: $bold-font-weight;
-      }
-      &.vs {
-        text-align: center;
-        min-width: $match-margin;
-      }
-    }
-    .team-info {
-      width: $grid-size * 20;
-    }
-
-    .previous-results {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      .previous-results-item {
-        border-radius: rem(8);
-        color: $white;
-        text-align: center;
-        font-size: $small-font-size;
-
-        padding: rem(2) rem(5) rem(3);
-        min-width: rem(14);
-        margin: $grid-size $grid-size $grid-size rem(0);
-
-        &.win {
-          background-color: $green;
-        }
-        &.loss {
-          background-color: $red;
-        }
-      }
-    }
   }
 
 }
