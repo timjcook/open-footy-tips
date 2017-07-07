@@ -1,7 +1,7 @@
 import { moduleForModel, test } from 'ember-qunit';
 
 moduleForModel('team', 'Unit | Model | team', {
-  needs: ['model:ground']
+  needs: ['model:ground', 'model:match']
 });
 
 test('it exists', function(assert) {

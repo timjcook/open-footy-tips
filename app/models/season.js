@@ -1,6 +1,8 @@
+import Ember from 'ember';
 import DS from 'ember-data';
 
-const { Model, attr, hasMany } = DS;
+const { computed } = Ember;
+const { Model, attr, hasMany, belongsTo } = DS;
 
 export default Model.extend({
 
@@ -10,6 +12,8 @@ export default Model.extend({
 
   // Relationships
 
-  rounds: hasMany('rounds')
+  ladder: belongsTo('ladder'),
+
+  rounds: hasMany('rounds'),
 
 });
