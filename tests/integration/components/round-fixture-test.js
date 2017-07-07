@@ -7,6 +7,8 @@ moduleForComponent('round-fixture', 'Integration | Component | round fixture', {
 });
 
 test('it renders with a round fixture row for each match', function(assert) {
+  assert.expect(3);
+
   let team1 = {
     name: 'Essendon'
   };
@@ -47,5 +49,7 @@ test('it renders with a round fixture row for each match', function(assert) {
 
   this.render(hbs`{{round-fixture round=round}}`);
 
-  assert.equal(this.$('#round-fixture .match-row').length, matches.filterBy('isCompleted', true).length);
+  assert.equal(this.$('#round-fixture .match-row').length, matches.length);
+  assert.equal(this.$('#round-fixture .match-completed').length, matches.filterBy('isCompleted', true).length);
+  assert.equal(this.$('#round-fixture .match-future').length, matches.filterBy('isCompleted', false).length);
 });
