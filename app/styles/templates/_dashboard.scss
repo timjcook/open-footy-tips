@@ -1,0 +1,6 @@
+#dashboard {
+  margin: ($grid-size * 5) auto;
+  max-width: $app-width;
+  display: flex;
+  justify-content: space-between;
+}

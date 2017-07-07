@@ -1,0 +1,10 @@
+<div id='round-picker'>
+  <div class='round-picker-item heading'>
+    Round
+  </div>
+  {{#each rounds as |round|}}
+    <button class='round-picker-item number {{if (eq round.roundNumber currentRound.roundNumber) "selected"}}' {{action 'selectRound' round}}>
+      {{round.roundNumber}}
+    </button>
+  {{/each}}
+</div>

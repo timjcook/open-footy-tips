@@ -1,0 +1,21 @@
+#round-picker {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: $grid-size 0 ($grid-size * 3);
+
+  .round-picker-item {
+    padding: $grid-size;
+    color: $blue;
+    font-weight: $bold-font-weight;
+    &.number {
+      &.selected {
+        background-color: $blue;
+        color: $white;
+
+        border-radius: rem(8);
+      }
+    }
+  }
+}

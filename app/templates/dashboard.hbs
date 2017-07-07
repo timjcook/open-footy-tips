@@ -1,0 +1,10 @@
+<div id='dashboard'>
+  <div class='panel left'>
+    {{round-picker rounds=rounds currentRound=currentRound selectRound=(action 'selectRound')}}
+    {{round-fixture round=currentRound}}
+  </div>
+
+  <div class='panel right'>
+    {{season-ladder ladder=ladder}}
+  </div>
+</div>
