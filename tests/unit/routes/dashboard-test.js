@@ -6,8 +6,8 @@ const { Object: EmberObject } = Ember;
 moduleFor('route:dashboard', 'Unit | Route | dashboard', {
 });
 
-test('it returns a model with current season, all season rounds and the default current round', function(assert) {
-  assert.expect(4);
+test('it returns a model with current season, ladder, all season rounds and the default current round', function(assert) {
+  assert.expect(5);
 
   let currentRound = {
     roundNumber: 1
@@ -17,8 +17,13 @@ test('it returns a model with current season, all season rounds and the default 
     { roundNumber: 2 }
   ];
 
+  let ladder = {
+    id: 'ladder123'
+  };
+
   let season = new EmberObject({
     year: 2017,
+    ladder,
     rounds
   });
 
@@ -35,13 +40,14 @@ test('it returns a model with current season, all season rounds and the default 
     route.afterModel(model, { queryParams: {} });
 
     assert.equal(model.season.year, season.year);
+    assert.equal(model.ladder.id, ladder.id);
     assert.deepEqual(model.rounds, rounds);
     assert.equal(model.currentRound.roundNumber, currentRound.roundNumber);
   });
 });
 
-test('it returns a model with current season, all season rounds and the current round based on query params', function(assert) {
-  assert.expect(4);
+test('it returns a model with current season, ladder, all season rounds and the current round based on query params', function(assert) {
+  assert.expect(5);
 
   let currentRound = {
     roundNumber: 2
@@ -50,9 +56,13 @@ test('it returns a model with current season, all season rounds and the current 
     { roundNumber: 1 },
     currentRound
   ];
+  let ladder = {
+    id: 'ladder123'
+  };
 
   let season = new EmberObject({
     year: 2017,
+    ladder,
     rounds
   });
 
@@ -69,6 +79,7 @@ test('it returns a model with current season, all season rounds and the current 
     route.afterModel(model, { queryParams: { roundNumber: currentRound.roundNumber } });
 
     assert.equal(model.season.year, season.year);
+    assert.equal(model.ladder.id, ladder.id);
     assert.deepEqual(model.rounds, rounds);
     assert.equal(model.currentRound.roundNumber, currentRound.roundNumber);
   });

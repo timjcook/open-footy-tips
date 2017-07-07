@@ -1,8 +1,10 @@
 import Ember from 'ember';
 
-const { Controller, computed } = Ember;
+const { Controller, computed, inject } = Ember;
 
 export default Controller.extend({
+
+  // query parameters
 
   queryParams: ['roundNumber'],
 
@@ -10,7 +12,11 @@ export default Controller.extend({
 
   // properties
 
+  season: computed.alias('model.season'),
+
   rounds: computed.alias('model.rounds'),
+
+  ladder: computed.alias('model.ladder'),
 
   currentRound: computed.alias('model.currentRound'),
 

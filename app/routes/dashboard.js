@@ -15,6 +15,7 @@ export default Route.extend({
 
     return RSVP.hash({
       season,
+      ladder: season.get('ladder'),
       rounds: season.get('rounds')
     });
   },
