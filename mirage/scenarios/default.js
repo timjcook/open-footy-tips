@@ -43,6 +43,31 @@ export default function(server) {
     year: 2017
   });
 
+
+  server.create('ladder', {
+    season,
+    ladderTeams: [
+      server.create('ladder-team', { team: gws, gamesPlayed: 14, gamesWon: 10, gamesLost: 4, gamesDrawn: 1, percentage: 119.3 }),
+      server.create('ladder-team', { team: adelaide, gamesPlayed: 14, gamesWon: 10, gamesLost: 4, gamesDrawn: 0, percentage: 135.5 }),
+      server.create('ladder-team', { team: geelong, gamesPlayed: 14, gamesWon: 9, gamesLost: 5, gamesDrawn: 1, percentage: 113.3 }),
+      server.create('ladder-team', { team: richmond, gamesPlayed: 14, gamesWon: 9, gamesLost: 5, gamesDrawn: 0, percentage: 112.2 }),
+      server.create('ladder-team', { team: port, gamesPlayed: 14, gamesWon: 8, gamesLost: 6, gamesDrawn: 0, percentage: 131.7 }),
+      server.create('ladder-team', { team: melbourne, gamesPlayed: 14, gamesWon: 8, gamesLost: 6, gamesDrawn: 0, percentage: 110.8 }),
+      server.create('ladder-team', { team: westCoast, gamesPlayed: 14, gamesWon: 8, gamesLost: 6, gamesDrawn: 0, percentage: 102.6 }),
+      server.create('ladder-team', { team: saints, gamesPlayed: 14, gamesWon: 8, gamesLost: 6, gamesDrawn: 0, percentage: 98.8 }),
+      server.create('ladder-team', { team: sydney, gamesPlayed: 14, gamesWon: 7, gamesLost: 7, gamesDrawn: 0, percentage: 108.0 }),
+      server.create('ladder-team', { team: bulldogs, gamesPlayed: 14, gamesWon: 7, gamesLost: 7, gamesDrawn: 0, percentage: 96.9 }),
+      server.create('ladder-team', { team: essendon, gamesPlayed: 14, gamesWon: 6, gamesLost: 8, gamesDrawn: 0, percentage: 101.8 }),
+      server.create('ladder-team', { team: goldCoast, gamesPlayed: 14, gamesWon: 6, gamesLost: 8, gamesDrawn: 0, percentage: 89.0 }),
+      server.create('ladder-team', { team: hawthorn, gamesPlayed: 14, gamesWon: 6, gamesLost: 8, gamesDrawn: 0, percentage: 82.5 }),
+      server.create('ladder-team', { team: fremantle, gamesPlayed: 14, gamesWon: 6, gamesLost: 8, gamesDrawn: 0, percentage: 80.3 }),
+      server.create('ladder-team', { team: collingwood, gamesPlayed: 14, gamesWon: 5, gamesLost: 9, gamesDrawn: 0, percentage: 97.1 }),
+      server.create('ladder-team', { team: carlton, gamesPlayed: 14, gamesWon: 5, gamesLost: 9, gamesDrawn: 0, percentage: 82.1 }),
+      server.create('ladder-team', { team: north, gamesPlayed: 14, gamesWon: 4, gamesLost: 10, gamesDrawn: 0, percentage: 92.6 }),
+      server.create('ladder-team', { team: brisbane, gamesPlayed: 14, gamesWon: 3, gamesLost: 11, gamesDrawn: 0, percentage: 71.0 })
+    ]
+  });
+
   server.create('round', { season, roundNumber: 1, matches: [
     server.create('match', {
       startTime: moment('2017-3-23 19:20'),

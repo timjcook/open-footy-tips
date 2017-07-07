@@ -26,5 +26,7 @@ export default function() {
   this.get('/rounds/:id');
   this.get('/matches/:id');
   this.get('/grounds/:id');
+  this.get('/ladders/:id');
+  this.get('/teams');
   this.get('/teams/:id');
 }
