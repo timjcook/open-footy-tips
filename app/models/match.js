@@ -56,6 +56,18 @@ export default Model.extend({
     return winningTeam;
   }),
 
+  losingTeam: computed('homeScoreTotal', 'awayScoreTotal', function() {
+    let losingTeam = null;
+
+    if (this.get('homeScoreTotal') > this.get('awayScoreTotal')) {
+      losingTeam = this.get('awayTeam');
+    } else if (this.get('homeScoreTotal') < this.get('awayScoreTotal')) {
+      losingTeam = this.get('homeTeam');
+    }
+
+    return losingTeam;
+  }),
+
   prettyHomeScore: computed('homeScoreGoals', 'homeScoreBehinds', 'homeScoreTotal', function() {
     return this.prettyScore(this.get('homeScoreGoals'), this.get('homeScoreBehinds'), this.get('homeScoreTotal'));
   }),

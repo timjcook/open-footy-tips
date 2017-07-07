@@ -43,7 +43,7 @@ test('it will return the away team as the winning team if the homeScoreTotal < a
   assert.equal(model.get('winningTeam.name'), team2.name);
 });
 
-test('it will null if the homeScoreTotal === awayScoreTotal', function(assert) {
+test('it will return winning team as null if the homeScoreTotal === awayScoreTotal', function(assert) {
   let team1 = {
     name: 'Essendon'
   };
@@ -60,6 +60,63 @@ test('it will null if the homeScoreTotal === awayScoreTotal', function(assert) {
   model.awayTeam = team2;
 
   assert.equal(model.get('winningTeam'), null);
+});
+
+test('it will return the away team as the losing team if the homeScoreTotal > awayScoreTotal', function(assert) {
+  let team1 = {
+    name: 'Essendon'
+  };
+  let team2 = {
+    name: 'Carlton'
+  };
+
+  let model = this.subject({
+    homeScoreTotal: 100,
+    awayScoreTotal: 80
+  });
+
+  model.homeTeam = team1;
+  model.awayTeam = team2;
+
+  assert.equal(model.get('losingTeam.name'), team2.name);
+});
+
+test('it will return the home team as the losing team if the homeScoreTotal < awayScoreTotal', function(assert) {
+  let team1 = {
+    name: 'Essendon'
+  };
+  let team2 = {
+    name: 'Carlton'
+  };
+
+  let model = this.subject({
+    homeScoreTotal: 80,
+    awayScoreTotal: 100
+  });
+
+  model.homeTeam = team1;
+  model.awayTeam = team2;
+
+  assert.equal(model.get('losingTeam.name'), team1.name);
+});
+
+test('it will return the losing team as null if the homeScoreTotal === awayScoreTotal', function(assert) {
+  let team1 = {
+    name: 'Essendon'
+  };
+  let team2 = {
+    name: 'Carlton'
+  };
+
+  let model = this.subject({
+    homeScoreTotal: 100,
+    awayScoreTotal: 100
+  });
+
+  model.homeTeam = team1;
+  model.awayTeam = team2;
+
+  assert.equal(model.get('losingTeam'), null);
 });
 
 test('it can check if the home team won', function(assert) {
