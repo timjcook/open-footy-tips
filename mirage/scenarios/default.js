@@ -43,7 +43,6 @@ export default function(server) {
     year: 2017
   });
 
-
   server.create('ladder', {
     season,
     ladderTeams: [

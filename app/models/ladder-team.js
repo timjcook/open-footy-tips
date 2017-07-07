@@ -28,6 +28,6 @@ export default Model.extend({
 
   ladder: belongsTo(),
 
-  team: belongsTo(),
+  team: belongsTo()
 
 });

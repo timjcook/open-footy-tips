@@ -1,7 +1,7 @@
 import { moduleForModel, test } from 'ember-qunit';
 
 moduleForModel('season', 'Unit | Model | season', {
-  needs: ['model:round']
+  needs: ['model:round', 'model:ladder']
 });
 
 test('it exists', function(assert) {

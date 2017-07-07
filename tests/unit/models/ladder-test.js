@@ -1,8 +1,7 @@
 import { moduleForModel, test } from 'ember-qunit';
 
 moduleForModel('ladder', 'Unit | Model | ladder', {
-  // Specify the other units that are required for this test.
-  needs: []
+  needs: ['model:season', 'model:ladder-team']
 });
 
 test('it exists', function(assert) {
