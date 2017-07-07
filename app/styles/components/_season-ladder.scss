@@ -1,0 +1,45 @@
+#season-ladder {
+  .ladder-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: rem(40);
+    padding: 0 $grid-size;
+
+
+    &.ladder-header {
+      background-color: $blue;
+      color: $white;
+
+    }
+
+    &:first-child {
+      border-top-left-radius: rem(8);
+      border-top-right-radius: rem(8);
+    }
+    &:last-child {
+      border-bottom-left-radius: rem(8);
+      border-bottom-right-radius: rem(8);
+    }
+
+    &.ladder-team {
+      .team-name {
+        font-weight: $bold-font-weight;
+      }
+      &:nth-child(2n + 1) {
+        background-color: #F2F2F2;
+      }
+    }
+
+    .ladder-row-item {
+      &.team-name {
+        min-width: rem(200);
+      }
+      &.number-item {
+        text-align: center;
+        min-width: rem(50);
+      }
+    }
+  }
+}

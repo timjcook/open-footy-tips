@@ -1,0 +1,20 @@
+<div id='season-ladder'>
+  <div class='ladder-header ladder-row'>
+    <div class='ladder-row-item team-name'>Name</div>
+    <div class='ladder-row-item number-item games-played'>P</div>
+    <div class='ladder-row-item number-item games-won'>W</div>
+    <div class='ladder-row-item number-item games-lost'>L</div>
+    <div class='ladder-row-item number-item games-drawn'>D</div>
+    <div class='ladder-row-item number-item team-percentage'>%</div>
+  </div>
+  {{#each ladderRows as |row|}}
+    <div class='ladder-row ladder-team'>
+      <div class='ladder-row-item team-name'>{{row.team.name}}</div>
+      <div class='ladder-row-item number-item games-played'>{{row.gamesPlayed}}</div>
+      <div class='ladder-row-item number-item games-won'>{{row.gamesWon}}</div>
+      <div class='ladder-row-item number-item games-lost'>{{row.gamesLost}}</div>
+      <div class='ladder-row-item number-item games-drawn'>{{row.gamesDrawn}}</div>
+      <div class='ladder-row-item number-item team-percentage'>{{row.prettyPercentage}}</div>
+    </div>
+  {{/each}}
+</div>
